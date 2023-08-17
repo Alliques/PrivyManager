@@ -1,0 +1,73 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:PrivyManager.Controls.Styles">
+    <Design.PreviewWith>
+        <Border Background="Black">
+            <controls:SearchTextBox
+                Width="200"
+                Height="20"
+                Icon="{DynamicResource Search}"
+                IconColor="{DynamicResource SystemGrayBrush}" />
+        </Border>
+    </Design.PreviewWith>
+
+    <Style Selector="controls|SearchTextBox">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{Binding CornerRadius,RelativeSource={RelativeSource TemplatedParent}}}">
+                    <DockPanel>
+                        <PathIcon
+                            Width="15"
+                            Height="15"
+                            Margin="10,5,10,5"
+                            Data="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"
+                            DockPanel.Dock="Left"
+                            Foreground="{Binding IconColor, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Grid>
+                            <TextBlock
+                                Name="PART_Watermark"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                DockPanel.Dock="Top"
+                                Foreground="Gray"
+                                IsVisible="{TemplateBinding Text,
+                                                            Converter={x:Static StringConverters.IsNullOrEmpty}}"
+                                Opacity="0.5"
+                                Text="Search here"
+                                TextAlignment="{TemplateBinding TextAlignment}"
+                                TextWrapping="{TemplateBinding TextWrapping}" />
+                            <TextPresenter
+                                Name="PART_TextPresenter"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                CaretBrush="{TemplateBinding CaretBrush}"
+                                CaretIndex="{TemplateBinding CaretIndex}"
+                                DockPanel.Dock="Top"
+                                PasswordChar="{TemplateBinding PasswordChar}"
+                                RevealPassword="{TemplateBinding RevealPassword}"
+                                SelectionBrush="{TemplateBinding SelectionBrush}"
+                                SelectionEnd="{TemplateBinding SelectionEnd}"
+                                SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                                SelectionStart="{TemplateBinding SelectionStart}"
+                                Text="{TemplateBinding Text,
+                                                       Mode=TwoWay}"
+                                TextAlignment="{TemplateBinding TextAlignment}"
+                                TextWrapping="{TemplateBinding TextWrapping}" />
+                        </Grid>
+                    </DockPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="MinHeight" Value="30" />
+    </Style>
+    <!--<Style Selector="TextBox.SearchTextBox:pointerover">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>-->
+</Styles>

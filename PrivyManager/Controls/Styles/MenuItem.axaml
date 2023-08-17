@@ -1,0 +1,26 @@
+﻿<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:PrivyManager.Controls">
+    <Style Selector="ListBoxItem">
+        <Setter Property="Template" Value="{DynamicResource MenuItemButton}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource SystemWhite}" />
+    </Style>
+    <Style Selector="ListBoxItem:pointerover">
+        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLightTramsparentBrush}" />
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource JacoLastBreathLight}" />
+    </Style>
+    <Style Selector="ListBoxItem:selected">
+        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLightTramsparentBrush}" />
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource JacoLastBreathLight}" />
+    </Style>
+    <Style Selector="ListBoxItem:pointerover /template/ PathIcon">
+        <Setter Property="Foreground" Value="{DynamicResource JacoLastBreathLight}" />
+    </Style>
+    <Style Selector="ListBoxItem:selected  /template/ PathIcon">
+        <Setter Property="Foreground" Value="{DynamicResource JacoLastBreathLight}" />
+    </Style>
+</Styles>

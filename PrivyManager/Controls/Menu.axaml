@@ -1,0 +1,130 @@
+<UserControl
+    x:Class="PrivyManager.Controls.Menu"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:PrivyManager.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:enums="using:PrivyManager.Enums"
+    xmlns:local="clr-namespace:PrivyManager.ViewModels.Controls;assembly=PrivyManager"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="800"
+    d:DesignWidth="500"
+    mc:Ignorable="d">
+    <StackPanel
+        x:Name="SideMenu"
+        Background="{DynamicResource BlocksPrimary}"
+        Classes="menu">
+        <StackPanel x:Name="menuStack">
+            <Border
+                Height="80"
+                Margin="20,0,20,5"
+                BorderBrush="Gray"
+                BorderThickness="0,0,0,1">
+                <Grid>
+                    <StackPanel
+                        Margin="20,5,0,0"
+                        HorizontalAlignment="Left"
+                        IsVisible="{Binding ElementName=menuBtn, Path=IsChecked, FallbackValue=true}">
+                        <TextBlock
+                            FontSize="24"
+                            Foreground="{DynamicResource JacoLastBreathLight}"
+                            Text="Privy" />
+                        <TextBlock
+                            FontSize="18"
+                            Foreground="{DynamicResource SystemWhite}"
+                            Text="Manager" />
+                    </StackPanel>
+                    <ToggleButton
+                        x:Name="menuBtn"
+                        Width="18"
+                        Margin="0"
+                        Padding="0,0,1,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Classes="Transparent"
+                        Click="OpenMenu">
+
+                        <PathIcon
+                            Width="15"
+                            Height="15"
+                            Data="{DynamicResource HamburgerMenu}"
+                            Foreground="{DynamicResource SystemWhiteBrush}" />
+                    </ToggleButton>
+                </Grid>
+            </Border>
+            <!--  Main menu  -->
+            <ListBox x:Name="menuList" Background="Transparent">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Type controls:MenuItem}">
+                        <controls:MenuItem />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <controls:MenuItem
+                    Title="Main"
+                    Classes="ListBoxItem"
+                    Count="78"
+                    IconColor="{DynamicResource SystemWhiteBrush}"
+                    IconData="{DynamicResource Main}" />
+                <controls:MenuItem
+                    Title="Accounts"
+                    Classes="ListBoxItem"
+                    Count="56"
+                    IconColor="{DynamicResource SystemWhiteBrush}"
+                    IconData="{DynamicResource Account}" />
+                <controls:MenuItem
+                    Title="Bank cards"
+                    Classes="ListBoxItem"
+                    Count="3"
+                    IconColor="{DynamicResource SystemWhiteBrush}"
+                    IconData="{DynamicResource Card}" />
+                <controls:MenuItem
+                    Title="Documents"
+                    Classes="ListBoxItem"
+                    Count="99"
+                    IconColor="{DynamicResource SystemWhiteBrush}"
+                    IconData="{DynamicResource Document}" />
+                <controls:MenuItem
+                    Title="Address"
+                    Classes="ListBoxItem"
+                    Count="123"
+                    IconColor="{DynamicResource SystemWhiteBrush}"
+                    IconData="{DynamicResource Address}" />
+                <controls:MenuItem
+                    Title="Notes"
+                    Classes="ListBoxItem"
+                    Count="4"
+                    IconColor="{DynamicResource SystemWhiteBrush}"
+                    IconData="{DynamicResource Notes}" />
+            </ListBox>
+            <Border
+                Height="2"
+                Margin="20,5"
+                BorderBrush="Gray"
+                BorderThickness="0,1,0,0" />
+
+            <!--  Tool menu  -->
+            <StackPanel x:Name="mb">
+                <controls:MenuButton
+                    Title="Password Check"
+                    Classes="MenuButton"
+                    IconColor="{DynamicResource SystemWhiteBrush}"
+                    IconData="{DynamicResource Key}" />
+                <controls:MenuButton
+                    Title="Password Generator"
+                    Classes="MenuButton"
+                    IconColor="{DynamicResource SystemWhiteBrush}"
+                    IconData="{DynamicResource KeyAdd}" />
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+    <UserControl.Styles>
+        <Style Selector="StackPanel.menu">
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Width" Duration="0:0:0.3" />
+                </Transitions>
+            </Setter>
+        </Style>
+    </UserControl.Styles>
+</UserControl>

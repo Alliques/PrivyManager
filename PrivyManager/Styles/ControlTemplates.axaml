@@ -1,0 +1,43 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  Menu button template  -->
+    <ControlTemplate x:Key="MenuItemButton" TargetType="{x:Type ContentControl}">
+        <Border
+            Height="50"
+            MinWidth="50"
+            Padding="20,0"
+            Background="{TemplateBinding Background}">
+            <DockPanel LastChildFill="True">
+                <PathIcon
+                    x:Name="iconPath"
+                    Width="18"
+                    Height="18"
+                    Data="{Binding IconData, RelativeSource={RelativeSource TemplatedParent}}"
+                    DockPanel.Dock="Left"
+                    Foreground="{Binding IconColor, RelativeSource={RelativeSource TemplatedParent}, Priority=StyleTrigger}" />
+                <TextBlock
+                    Margin="15,0,0,0"
+                    VerticalAlignment="Center"
+                    Text="{Binding Title, RelativeSource={RelativeSource TemplatedParent}}"
+                    TextBlock.FontSize="14"
+                    TextBlock.Foreground="{TemplateBinding Foreground}" />
+                <Label
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    HorizontalContentAlignment="Right"
+                    VerticalContentAlignment="Center"
+                    Content="{Binding Count, RelativeSource={RelativeSource TemplatedParent}}}"
+                    DockPanel.Dock="Right"
+                    TextBlock.Foreground="{TemplateBinding Foreground}" />
+            </DockPanel>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="CommonPopup" TargetType="Popup">
+        <Border
+            Background="LightBlue"
+            BorderBrush="Black"
+            BorderThickness="1">
+            <ContentPresenter />
+        </Border>
+    </ControlTemplate>
+</ResourceDictionary>

@@ -1,0 +1,48 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Design.PreviewWith>
+        <Border
+            Width="200"
+            Height="300"
+            Background="Gray">
+            <Button
+                Width="120"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Background="{DynamicResource JacoLastBreathLight}"
+                Content="+ Add">
+                <Button.Flyout>
+                    <Flyout FlyoutPresenterClasses="flyoutCommonStyle" Placement="Bottom">
+                        <StackPanel>
+                            <Button Content="Add" />
+                            <Button Content="Remove" />
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+        </Border>
+    </Design.PreviewWith>
+
+    <!--  Toggle button  -->
+    <Style Selector="ToggleButton.Transparent:unchecked /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="ToggleButton.Transparent:checked /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <!--  Flyout for combobox  -->
+    <Style Selector="FlyoutPresenter.flyoutCommonStyle">
+        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLight}" />
+    </Style>
+    <Style Selector="FlyoutPresenter.flyoutCommonStyle>Button">
+        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLight}" />
+    </Style>
+
+    <!--  Button  -->
+    <Style Selector="Button:pointerover  /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLight}" />
+    </Style>
+</Styles>
