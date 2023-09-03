@@ -1,0 +1,127 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:PrivyManager.Controls">
+    <Design.PreviewWith>
+        <controls:Menu Height="600">
+            <controls:Menu.MenuContent>
+                <StackPanel>
+                    <controls:MenuItem
+                        Title="Main"
+                        Classes="ListBoxItem"
+                        Count="78"
+                        IconColor="{DynamicResource SystemWhiteBrush}"
+                        IconData="{DynamicResource Main}" />
+                    <controls:MenuItem
+                        Title="Accounts"
+                        Classes="ListBoxItem"
+                        Count="56"
+                        IconColor="{DynamicResource SystemWhiteBrush}"
+                        IconData="{DynamicResource Account}" />
+                    <controls:MenuItem
+                        Title="Bank cards"
+                        Classes="ListBoxItem"
+                        Count="3"
+                        IconColor="{DynamicResource SystemWhiteBrush}"
+                        IconData="{DynamicResource Card}" />
+                    <controls:MenuItem
+                        Title="Documents"
+                        Classes="ListBoxItem"
+                        Count="99"
+                        IconColor="{DynamicResource SystemWhiteBrush}"
+                        IconData="{DynamicResource Document}" />
+                    <controls:MenuItem
+                        Title="Address"
+                        Classes="ListBoxItem"
+                        Count="123"
+                        IconColor="{DynamicResource SystemWhiteBrush}"
+                        IconData="{DynamicResource Address}" />
+                    <controls:MenuItem
+                        Title="Notes"
+                        Classes="ListBoxItem"
+                        Count="4"
+                        IconColor="{DynamicResource SystemWhiteBrush}"
+                        IconData="{DynamicResource Notes}" />
+                    <Border
+                        Height="2"
+                        Margin="20,5"
+                        BorderBrush="Gray"
+                        BorderThickness="0,1,0,0" />
+                    <!--  Tool menu  -->
+                    <controls:MenuButton
+                        Title="Password Check"
+                        Classes="MenuButton"
+                        IconColor="{DynamicResource SystemWhiteBrush}"
+                        IconData="{DynamicResource Key}" />
+                    <controls:MenuButton
+                        Title="Password Generator"
+                        Classes="MenuButton"
+                        IconColor="{DynamicResource SystemWhiteBrush}"
+                        IconData="{DynamicResource KeyAdd}" />
+                </StackPanel>
+            </controls:Menu.MenuContent>
+        </controls:Menu>
+    </Design.PreviewWith>
+
+    <Style Selector="controls|Menu">
+        <!--  Set Defaults  -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <StackPanel
+                    Name="SideMenu"
+                    Background="{DynamicResource BlocksPrimary}"
+                    Classes="menu">
+                    <StackPanel x:Name="menuStack">
+                        <Border
+                            Height="80"
+                            Margin="20,0,20,5"
+                            BorderBrush="Gray"
+                            BorderThickness="0,0,0,1">
+                            <Grid>
+                                <StackPanel
+                                    Margin="20,5,0,0"
+                                    HorizontalAlignment="Left"
+                                    IsVisible="{Binding ElementName=menuBtn, Path=IsChecked, FallbackValue=true}">
+                                    <TextBlock
+                                        FontSize="24"
+                                        Foreground="{DynamicResource JacoLastBreathLight}"
+                                        Text="Privy" />
+                                    <TextBlock
+                                        FontSize="18"
+                                        Foreground="{DynamicResource SystemWhite}"
+                                        Text="Manager" />
+                                </StackPanel>
+                                <ToggleButton
+                                    Name="ToggleButton"
+                                    Width="18"
+                                    Margin="0"
+                                    Padding="0,0,1,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Classes="Transparent">
+                                    <PathIcon
+                                        Width="15"
+                                        Height="15"
+                                        Data="{DynamicResource HamburgerMenu}"
+                                        Foreground="{DynamicResource SystemWhiteBrush}" />
+                                </ToggleButton>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                    <ContentPresenter
+                        Name="MenuContentPresenter"
+                        HorizontalAlignment="Stretch"
+                        Content="{TemplateBinding MenuContent}" />
+                </StackPanel>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="StackPanel.menu">
+        <Setter Property="Width" Value="230" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Width" Duration="0:0:0.3" />
+            </Transitions>
+        </Setter>
+    </Style>
+</Styles>

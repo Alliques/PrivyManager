@@ -30,20 +30,81 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <controls:Menu />
+            <!--  Menu  -->
+            <controls:Menu>
+                <controls:Menu.MenuContent>
+                    <StackPanel>
+                        <ListBox Background="Transparent">
+                            <controls:MenuItem
+                                Title="Main"
+                                Classes="ListBoxItem"
+                                Count="78"
+                                IconColor="{DynamicResource SystemWhiteBrush}"
+                                IconData="{DynamicResource Main}" />
+                            <controls:MenuItem
+                                Title="Accounts"
+                                Classes="ListBoxItem"
+                                Count="56"
+                                IconColor="{DynamicResource SystemWhiteBrush}"
+                                IconData="{DynamicResource Account}" />
+                            <controls:MenuItem
+                                Title="Bank cards"
+                                Classes="ListBoxItem"
+                                Count="3"
+                                IconColor="{DynamicResource SystemWhiteBrush}"
+                                IconData="{DynamicResource Card}" />
+                            <controls:MenuItem
+                                Title="Documents"
+                                Classes="ListBoxItem"
+                                Count="99"
+                                IconColor="{DynamicResource SystemWhiteBrush}"
+                                IconData="{DynamicResource Document}" />
+                            <controls:MenuItem
+                                Title="Address"
+                                Classes="ListBoxItem"
+                                Count="123"
+                                IconColor="{DynamicResource SystemWhiteBrush}"
+                                IconData="{DynamicResource Address}" />
+                            <controls:MenuItem
+                                Title="Notes"
+                                Classes="ListBoxItem"
+                                Count="4"
+                                IconColor="{DynamicResource SystemWhiteBrush}"
+                                IconData="{DynamicResource Notes}" />
+                        </ListBox>
+                        <Border
+                            Height="2"
+                            Margin="20,5"
+                            BorderBrush="Gray"
+                            BorderThickness="0,1,0,0" />
+                        <!--  Tool menu  -->
+                        <controls:MenuButton
+                            Title="Password Check"
+                            Classes="MenuButton"
+                            IconColor="{DynamicResource SystemWhiteBrush}"
+                            IconData="{DynamicResource Key}" />
+                        <controls:MenuButton
+                            Title="Password Generator"
+                            Classes="MenuButton"
+                            IconColor="{DynamicResource SystemWhiteBrush}"
+                            IconData="{DynamicResource KeyAdd}" />
+                    </StackPanel>
+                </controls:Menu.MenuContent>
+            </controls:Menu>
 
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+            <Border Grid.Column="1" Padding="20,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
-                <!--    -->
-                <controls:ControlPanel Height="80" />
+                    <!--  Tools  -->
+                    <controls:ControlPanel Height="80" />
 
-                <!--  Main content  -->
-                <Border Grid.Row="1">
-                    <!--<rxui:RoutedViewHost Grid.Row="1" Router="{Binding Router}">
+                    <!--  Main content  -->
+                    <Border Grid.Row="1">
+                        <!--<rxui:RoutedViewHost Grid.Row="1" Router="{Binding Router}">
                         <rxui:RoutedViewHost.DefaultContent>
                             <TextBlock
                                 HorizontalAlignment="Center"
@@ -51,15 +112,16 @@
                                 Text="{Binding Title}" />
                         </rxui:RoutedViewHost.DefaultContent>
                         <rxui:RoutedViewHost.ViewLocator>
-                    -->
-                    <!--  See AppViewLocator.cs section below  -->
-                    <!--
+                        -->
+                        <!--  See AppViewLocator.cs section below  -->
+                        <!--
                             <app:AppViewLocator />
                         </rxui:RoutedViewHost.ViewLocator>
                     </rxui:RoutedViewHost>-->
-                </Border>
+                    </Border>
 
-            </Grid>
+                </Grid>
+            </Border>
         </Grid>
     </Border>
 </Window>

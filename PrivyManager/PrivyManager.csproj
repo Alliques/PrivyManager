@@ -11,8 +11,11 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <AvaloniaXaml Remove="ViewModels\NewFolder\**" />
+    <Compile Remove="ViewModels\NewFolder\**" />
+    <EmbeddedResource Remove="ViewModels\NewFolder\**" />
+    <None Remove="ViewModels\NewFolder\**" />
     <Content Include="Assets\avalonia-logo.ico" />
-    <Folder Include="ViewModels\NewFolder\" />
   </ItemGroup>
 
 

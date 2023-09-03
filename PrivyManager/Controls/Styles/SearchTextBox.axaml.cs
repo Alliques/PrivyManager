@@ -5,7 +5,7 @@ using Avalonia.Media;
 using Avalonia.Styling;
 using System;
 
-namespace PrivyManager.Controls.Styles;
+namespace PrivyManager.Controls;
 
 public class SearchTextBox : TextBox, IStyleable
 {

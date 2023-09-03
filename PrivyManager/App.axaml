@@ -14,9 +14,11 @@
         </Style>
         <!--<FluentTheme Mode="Light" />-->
         <StyleInclude Source="avares://PrivyManager/Styles/BaseStyle.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/Styles/Menu.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/MenuItem.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/MenuButton.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/SearchTextBox.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/Styles/ControlPanel.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/Common.axaml" />
     </Application.Styles>
     <Application.Resources>

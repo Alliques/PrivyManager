@@ -20,7 +20,7 @@
     <Style Selector="ListBoxItem:pointerover /template/ PathIcon">
         <Setter Property="Foreground" Value="{DynamicResource JacoLastBreathLight}" />
     </Style>
-    <Style Selector="ListBoxItem:selected  /template/ PathIcon">
+    <Style Selector="ListBoxItem:selected /template/ PathIcon">
         <Setter Property="Foreground" Value="{DynamicResource JacoLastBreathLight}" />
     </Style>
 </Styles>
