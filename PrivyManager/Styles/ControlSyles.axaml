@@ -1,62 +1,61 @@
 <Styles
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:PrivyManager.Controls">
+    xmlns:converter="using:PrivyManager.Styles.Converters">
+    <Styles.Resources>
+        <converter:CornerRadiusConverter x:Key="cornerRadiusConverter" />
+    </Styles.Resources>
     <Design.PreviewWith>
-        <Border>
-            <controls:SearchTextBox
+        <Border Padding="20">
+            <TextBox
                 Width="200"
-                Height="20"
-                Icon="{DynamicResource Search}"
-                IconColor="{DynamicResource SystemGrayBrush}" />
+                Height="50"
+                Classes="Rounded"
+                Watermark="asd" />
         </Border>
     </Design.PreviewWith>
 
-    <Style Selector="controls|SearchTextBox">
+    <Style Selector="TextBox">
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
+                    Padding="10,0"
                     Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="{Binding CornerRadius,RelativeSource={RelativeSource TemplatedParent}}}">
+                    BorderBrush="{DynamicResource SystemGray}"
+                    BorderThickness="1"
+                    CornerRadius="{TemplateBinding CornerRadius}">
                     <DockPanel>
-                        <PathIcon
-                            Width="15"
-                            Height="15"
-                            Margin="10,5,10,5"
-                            Data="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"
-                            DockPanel.Dock="Left"
-                            Foreground="{Binding IconColor, RelativeSource={RelativeSource TemplatedParent}}" />
                         <Grid>
                             <TextBlock
                                 Name="PART_Watermark"
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                VerticalAlignment="Center"
                                 DockPanel.Dock="Top"
-                                Foreground="Gray"
+                                FontSize="14"
+                                Foreground="{DynamicResource SystemGray}"
                                 IsVisible="{TemplateBinding Text,
                                                             Converter={x:Static StringConverters.IsNullOrEmpty}}"
                                 Opacity="0.5"
-                                Text="Search"
+                                Text="{TemplateBinding Watermark}"
                                 TextAlignment="{TemplateBinding TextAlignment}"
                                 TextWrapping="{TemplateBinding TextWrapping}" />
                             <TextPresenter
                                 Name="PART_TextPresenter"
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                CaretBrush="{TemplateBinding CaretBrush}"
+                                CaretBrush="{DynamicResource SystemGray}"
                                 CaretIndex="{TemplateBinding CaretIndex}"
                                 DockPanel.Dock="Top"
+                                LetterSpacing="0.75"
                                 PasswordChar="{TemplateBinding PasswordChar}"
                                 RevealPassword="{TemplateBinding RevealPassword}"
-                                SelectionBrush="{DynamicResource JacoLastBreathLight}"
+                                SelectionBrush="{DynamicResource JacoLastBreathDark}"
                                 SelectionEnd="{TemplateBinding SelectionEnd}"
                                 SelectionForegroundBrush="{DynamicResource SystemWhite}"
                                 SelectionStart="{TemplateBinding SelectionStart}"
                                 Text="{TemplateBinding Text,
                                                        Mode=TwoWay}"
                                 TextAlignment="{TemplateBinding TextAlignment}"
+                                TextElement.Foreground="{DynamicResource SystemWhite}"
                                 TextWrapping="{TemplateBinding TextWrapping}" />
                         </Grid>
                     </DockPanel>
@@ -67,7 +66,20 @@
         <Setter Property="MinWidth" Value="100" />
         <Setter Property="MinHeight" Value="30" />
     </Style>
-    <!--<Style Selector="TextBox.SearchTextBox:pointerover">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>-->
+
+    <Style Selector="TextBox.Rounded">
+        <Setter Property="CornerRadius" Value="{Binding Path=Height, Priority=Style, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource cornerRadiusConverter}}" />
+    </Style>
+
+    <Style Selector="TextBox:pointerover">
+        <Style Selector="^ /template/ TextBlock#PART_Watermark">
+            <Setter Property="Foreground" Value="{DynamicResource SystemGray}" />
+        </Style>
+    </Style>
+
+    <Style Selector="TextBox:focus">
+        <Style Selector="^ /template/ TextBlock#PART_Watermark">
+            <Setter Property="Foreground" Value="{DynamicResource SystemGray}" />
+        </Style>
+    </Style>
 </Styles>

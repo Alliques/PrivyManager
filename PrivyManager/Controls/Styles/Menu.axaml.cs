@@ -12,7 +12,6 @@ public class Menu : TemplatedControl
     private StackPanel menuPanel;
     public Menu()
     {
-        DataContext = new MenuViewModel();
         TemplateApplied += OnTemplateApplied;
     }
 

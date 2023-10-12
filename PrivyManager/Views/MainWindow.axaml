@@ -6,7 +6,6 @@
     xmlns:controls="using:PrivyManager.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:rxui="clr-namespace:Avalonia.ReactiveUI;assembly=Avalonia.ReactiveUI"
     xmlns:vm="using:PrivyManager.ViewModels"
     Title="PrivyManager"
     d:DesignHeight="450"
@@ -22,7 +21,6 @@
         -->
         <vm:MainWindowViewModel />
     </Design.DataContext>
-
     <Border Background="{DynamicResource SemiBlack}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -30,11 +28,22 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
+            <!--  Lock screen  -->
+            <controls:LockScreen
+                Grid.ColumnSpan="2"
+                Opacity="1"
+                ZIndex="2" />
+
             <!--  Menu  -->
             <controls:Menu>
                 <controls:Menu.MenuContent>
                     <StackPanel>
-                        <ListBox Background="Transparent">
+                        <ListBox x:Name="Menu" Background="Transparent">
+                            <Interaction.Behaviors>
+                                <EventTriggerBehavior EventName="SelectionChanged" SourceObject="Menu">
+                                    <InvokeCommandAction Command="{Binding SelectedMenuItemChangedCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=SelectedItem}" />
+                                </EventTriggerBehavior>
+                            </Interaction.Behaviors>
                             <controls:MenuItem
                                 Title="Main"
                                 Classes="ListBoxItem"
@@ -77,7 +86,9 @@
                             Margin="20,5"
                             BorderBrush="Gray"
                             BorderThickness="0,1,0,0" />
+
                         <!--  Tool menu  -->
+
                         <controls:MenuButton
                             Title="Password Check"
                             Classes="MenuButton"

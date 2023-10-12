@@ -1,19 +1,11 @@
-﻿using ReactiveUI;
-using System;
-using System.Reactive.Disposables;
+﻿using System;
 
 namespace PrivyManager.ViewModels
 {
-    public class AccountsViewModel : ViewModelBase, IRoutableViewModel
+    public class AccountsViewModel : ViewModelBase
     {
-        public IScreen HostScreen { get; }
 
-        public string? UrlPathSegment => Guid.NewGuid().ToString().Substring(0, 5);
 
-        public AccountsViewModel(IScreen screen) : base()
-        {
-            HostScreen = screen;
-        }
 
     }
 }

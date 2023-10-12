@@ -1,7 +1,22 @@
-﻿namespace PrivyManager.ViewModels
+﻿using CommunityToolkit.Mvvm.Input;
+using System.Windows.Input;
+
+namespace PrivyManager.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public partial class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
+        public object SelectedMenuItem { get; set; }
+        public ICommand SelectedMenuItemChangedCommand { get; set; }
+
+        public MainWindowViewModel()
+        {
+            SelectedMenuItemChangedCommand = new RelayCommand<object>((arg) => SelectedMenuItemChanged(arg));
+        }
+
+
+        public void SelectedMenuItemChanged(object arg)
+        {
+         
+        }
     }
 }

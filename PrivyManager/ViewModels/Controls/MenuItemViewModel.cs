@@ -1,8 +1,6 @@
 ﻿using Avalonia.Media;
 using PrivyManager.Enums;
-using ReactiveUI;
 using System;
-using System.Reactive;
 
 namespace PrivyManager.ViewModels.Controls
 {

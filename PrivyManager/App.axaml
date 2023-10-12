@@ -20,6 +20,8 @@
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/SearchTextBox.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/ControlPanel.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/Common.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/Styles/LockScreen.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Styles/ControlSyles.axaml" />
     </Application.Styles>
     <Application.Resources>
         <ResourceDictionary>

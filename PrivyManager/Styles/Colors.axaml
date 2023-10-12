@@ -32,6 +32,6 @@
     <Color x:Key="SystemLightGray">#adadaa</Color>
     <SolidColorBrush x:Key="SystemLightGrayBrush" Color="{StaticResource SystemLightGray}" />
 
-
     <SolidColorBrush x:Key="MenuFlyoutPresenterBackground">Red</SolidColorBrush>
+
 </ResourceDictionary>

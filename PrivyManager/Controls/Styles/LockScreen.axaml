@@ -1,0 +1,64 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:PrivyManager.Controls">
+    <Design.PreviewWith>
+        <controls:LockScreen Width="500" Height="400" />
+    </Design.PreviewWith>
+
+    <Style Selector="controls|LockScreen">
+        <!--  Set Defaults  -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{DynamicResource SemiBlackBrush}">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock
+                            Grid.Row="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="18"
+                            Foreground="{DynamicResource SystemWhite}"
+                            IsVisible="False"
+                            Text="{Binding ProfilePhd, Mode=OneTime}" />
+                        <TextBox
+                            Grid.Row="1"
+                            Width="250"
+                            Height="35"
+                            Margin="5"
+                            VerticalContentAlignment="Center"
+                            Classes="Rounded"
+                            Watermark="{Binding ProfilePhd}" />
+                        <TextBox
+                            Grid.Row="2"
+                            Width="250"
+                            Height="35"
+                            Margin="5"
+                            VerticalContentAlignment="Center"
+                            Classes="Rounded"
+                            PasswordChar="*"
+                            Watermark="Password" />
+                        <TextBlock
+                            Margin="5"
+                            HorizontalAlignment="Center"
+                            Cursor="Hand"
+                            FontSize="12"
+                            Foreground="{DynamicResource SystemWhite}"
+                            Text="Create new profile"
+                            TextDecorations="Underline" />
+                        <Button
+                            Grid.Row="3"
+                            Width="250"
+                            Height="45"
+                            Margin="5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Background="{DynamicResource JacoLastBreathDark}"
+                            Content="Sign in" />
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>
