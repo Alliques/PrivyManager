@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace PrivyManager.Views
+namespace PrivyManager.View
 {
     public partial class MainWindow : Window
     {

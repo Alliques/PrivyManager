@@ -1,16 +1,18 @@
 <Window
-    x:Class="PrivyManager.Views.MainWindow"
+    x:Class="PrivyManager.View.MainWindow"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:app="clr-namespace:PrivyManager;assembly=PrivyManager"
     xmlns:controls="using:PrivyManager.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:enums="using:PrivyManager.Enums"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="using:PrivyManager.ViewModels"
+    xmlns:viewModes="using:PrivyManager.ViewModels"
+    xmlns:views="using:PrivyManager.View"
     Title="PrivyManager"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    x:DataType="vm:MainWindowViewModel"
+    x:DataType="viewModes:MainWindowViewModel"
     Icon="/Assets/avalonia-logo.ico"
     mc:Ignorable="d">
 
@@ -19,7 +21,7 @@
             This only sets the DataContext for the previewer in an IDE,
             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
         -->
-        <vm:MainWindowViewModel />
+        <viewModes:MainWindowViewModel />
     </Design.DataContext>
     <Border Background="{DynamicResource SemiBlack}">
         <Grid>
@@ -29,10 +31,10 @@
             </Grid.ColumnDefinitions>
 
             <!--  Lock screen  -->
-            <controls:LockScreen
+            <!--<controls:LockScreen
                 Grid.ColumnSpan="2"
                 Opacity="1"
-                ZIndex="2" />
+                ZIndex="2" />-->
 
             <!--  Menu  -->
             <controls:Menu>
@@ -41,45 +43,50 @@
                         <ListBox x:Name="Menu" Background="Transparent">
                             <Interaction.Behaviors>
                                 <EventTriggerBehavior EventName="SelectionChanged" SourceObject="Menu">
-                                    <InvokeCommandAction Command="{Binding SelectedMenuItemChangedCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=SelectedItem}" />
+                                    <InvokeCommandAction Command="{Binding SelectedMenuItemChanged}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=SelectedItem}" />
                                 </EventTriggerBehavior>
                             </Interaction.Behaviors>
                             <controls:MenuItem
                                 Title="Main"
                                 Classes="ListBoxItem"
-                                Count="78"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
-                                IconData="{DynamicResource Main}" />
+                                IconData="{DynamicResource Main}"
+                                Type="{x:Static enums:MenuItems.Main}" />
                             <controls:MenuItem
                                 Title="Accounts"
                                 Classes="ListBoxItem"
                                 Count="56"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
-                                IconData="{DynamicResource Account}" />
+                                IconData="{DynamicResource Account}"
+                                Type="{x:Static enums:MenuItems.Accounts}" />
                             <controls:MenuItem
                                 Title="Bank cards"
                                 Classes="ListBoxItem"
                                 Count="3"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
-                                IconData="{DynamicResource Card}" />
+                                IconData="{DynamicResource Card}"
+                                Type="{x:Static enums:MenuItems.Cards}" />
                             <controls:MenuItem
                                 Title="Documents"
                                 Classes="ListBoxItem"
                                 Count="99"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
-                                IconData="{DynamicResource Document}" />
+                                IconData="{DynamicResource Document}"
+                                Type="{x:Static enums:MenuItems.Documents}" />
                             <controls:MenuItem
                                 Title="Address"
                                 Classes="ListBoxItem"
                                 Count="123"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
-                                IconData="{DynamicResource Address}" />
+                                IconData="{DynamicResource Address}"
+                                Type="{x:Static enums:MenuItems.Address}" />
                             <controls:MenuItem
                                 Title="Notes"
                                 Classes="ListBoxItem"
                                 Count="4"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
-                                IconData="{DynamicResource Notes}" />
+                                IconData="{DynamicResource Notes}"
+                                Type="{x:Static enums:MenuItems.Notes}" />
                         </ListBox>
                         <Border
                             Height="2"
@@ -114,23 +121,30 @@
                     <controls:ControlPanel Height="80" />
 
                     <!--  Main content  -->
-                    <Border Grid.Row="1">
-                        <!--<rxui:RoutedViewHost Grid.Row="1" Router="{Binding Router}">
-                        <rxui:RoutedViewHost.DefaultContent>
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Text="{Binding Title}" />
-                        </rxui:RoutedViewHost.DefaultContent>
-                        <rxui:RoutedViewHost.ViewLocator>
-                        -->
-                        <!--  See AppViewLocator.cs section below  -->
-                        <!--
-                            <app:AppViewLocator />
-                        </rxui:RoutedViewHost.ViewLocator>
-                    </rxui:RoutedViewHost>-->
+                    <Border Grid.Row="1" Background="White">
+                        <ContentControl Content="{Binding CurrentViewModel, Mode=TwoWay}">
+                            <ContentControl.DataTemplates>
+                                <DataTemplate DataType="{x:Type viewModes:MainViewModel}">
+                                    <views:MainView />
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type viewModes:AccountsViewModel}">
+                                    <views:AccountsView />
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type viewModes:DocumentsViewModel}">
+                                    <views:DocumentsView />
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type viewModes:CardsViewModel}">
+                                    <views:CardsView />
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type viewModes:AddressViewModel}">
+                                    <views:AddressView />
+                                </DataTemplate>
+                                <DataTemplate DataType="{x:Type viewModes:NotesViewModel}">
+                                    <views:NotesView />
+                                </DataTemplate>
+                            </ContentControl.DataTemplates>
+                        </ContentControl>
                     </Border>
-
                 </Grid>
             </Border>
         </Grid>

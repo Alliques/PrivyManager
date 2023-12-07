@@ -51,4 +51,13 @@ public class MenuItem : ListBoxItem, IStyleable
 
     public static AvaloniaProperty IconColorProperty =
         AvaloniaProperty.Register<MenuItem, Brush>(nameof(IconColor));
+
+    public object Type
+    {
+        get => (object?)GetValue(TypeProperty);
+        set => SetValue(TypeProperty, value);
+    }
+
+    public static AvaloniaProperty TypeProperty =
+        AvaloniaProperty.Register<MenuItem, object?>(nameof(Type));
 }

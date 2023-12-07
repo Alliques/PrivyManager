@@ -19,7 +19,7 @@
                             FontSize="18"
                             Foreground="{DynamicResource SystemWhite}"
                             IsVisible="False"
-                            Text="{Binding ProfilePhd, Mode=OneTime}" />
+                            Text="{Binding ProfileName, Mode=OneTime}" />
                         <TextBox
                             Grid.Row="1"
                             Width="250"

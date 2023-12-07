@@ -1,15 +1,12 @@
 ﻿
 using Avalonia.Controls;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System.ComponentModel;
 
 namespace PrivyManager.ViewModels
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : ObservableObject
     {
-        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
-        public void OnPropertyChanged(string name)
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(name));
-        }
+        
     }
 }

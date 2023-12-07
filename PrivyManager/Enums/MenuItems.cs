@@ -4,6 +4,9 @@
     {
         Main,
         Accounts,
-        Cards
+        Cards,
+        Documents,
+        Address,
+        Notes
     }
 }
