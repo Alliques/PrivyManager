@@ -7,15 +7,12 @@
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="TextBlock.Foreground" Value="{DynamicResource SystemWhite}" />
     </Style>
-    <Style Selector="ListBoxItem:pointerover">
-        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLightTramsparentBrush}" />
-        <Setter Property="TextBlock.Foreground" Value="{DynamicResource JacoLastBreathLight}" />
+    <Style Selector="ListBoxItem:pointerover /template/ TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource JacoLastBreathLight}" />
     </Style>
-    <Style Selector="ListBoxItem:selected">
-        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLightTramsparentBrush}" />
-        <Setter Property="TextBlock.Foreground" Value="{DynamicResource JacoLastBreathLight}" />
+    <Style Selector="ListBoxItem:selected /template/ TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource JacoLastBreathLight}" />
     </Style>
     <Style Selector="ListBoxItem:pointerover /template/ PathIcon">
         <Setter Property="Foreground" Value="{DynamicResource JacoLastBreathLight}" />

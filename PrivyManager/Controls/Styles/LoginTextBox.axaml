@@ -1,0 +1,73 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:PrivyManager.Controls.Styles">
+    <Design.PreviewWith>
+        <controls:LoginTextBox
+            Width="250"
+            Height="15"
+            Background="{DynamicResource BlocksPrimary}"
+            CornerRadius="5,5,0,0"
+            Watermark="Login" />
+    </Design.PreviewWith>
+
+    <Style Selector="controls|LoginTextBox">
+        <!--  Set Defaults  -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Padding="20,0,5,0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{Binding CornerRadius,RelativeSource={RelativeSource TemplatedParent}}}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="30" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Name="PART_Watermark"
+                            Grid.Column="0"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="Center"
+                            Foreground="Gray"
+                            IsVisible="{TemplateBinding Text,
+                                                        Converter={x:Static StringConverters.IsNullOrEmpty}}"
+                            Opacity="0.5"
+                            Text="{TemplateBinding Watermark,
+                                                   Mode=TwoWay}"
+                            TextAlignment="{TemplateBinding TextAlignment}"
+                            TextWrapping="{TemplateBinding TextWrapping}" />
+                        <TextPresenter
+                            Name="PART_TextPresenter"
+                            Grid.Column="0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            CaretBrush="{TemplateBinding CaretBrush}"
+                            CaretIndex="{TemplateBinding CaretIndex}"
+                            PasswordChar="{TemplateBinding PasswordChar}"
+                            RevealPassword="{TemplateBinding RevealPassword}"
+                            SelectionBrush="{DynamicResource JacoLastBreathLight}"
+                            SelectionEnd="{TemplateBinding SelectionEnd}"
+                            SelectionForegroundBrush="{DynamicResource SystemWhite}"
+                            SelectionStart="{TemplateBinding SelectionStart}"
+                            Text="{TemplateBinding Text,
+                                                   Mode=TwoWay}"
+                            TextAlignment="{TemplateBinding TextAlignment}"
+                            TextWrapping="{TemplateBinding TextWrapping}" />
+                        <Button Grid.Column="1" Classes="animated">
+                            <PathIcon
+                                Width="10"
+                                Data="{DynamicResource Copy}"
+                                Foreground="White" />
+                        </Button>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="MinWidth" Value="120" />
+        <Setter Property="MinHeight" Value="25" />
+    </Style>
+</Styles>

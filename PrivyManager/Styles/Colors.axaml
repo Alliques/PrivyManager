@@ -32,6 +32,9 @@
     <Color x:Key="SystemLightGray">#adadaa</Color>
     <SolidColorBrush x:Key="SystemLightGrayBrush" Color="{StaticResource SystemLightGray}" />
 
+    <Color x:Key="SystemErrorText">#CF3940</Color>
+    <SolidColorBrush x:Key="SystemErrorTextBrush" Color="{StaticResource SystemLightGray}" />
+
     <SolidColorBrush x:Key="MenuFlyoutPresenterBackground">Red</SolidColorBrush>
 
 </ResourceDictionary>

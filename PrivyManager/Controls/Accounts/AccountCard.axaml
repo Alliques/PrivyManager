@@ -1,0 +1,83 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:accountCard="using:PrivyManager.Controls.Accounts"
+    xmlns:control="using:PrivyManager.Controls"
+    xmlns:controls="using:PrivyManager.Controls.Styles">
+    <Design.PreviewWith>
+        <accountCard:AccountCard Width="300" />
+    </Design.PreviewWith>
+
+    <Style Selector="accountCard|AccountCard">
+        <!--  Set Defaults  -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Padding="15"
+                    Background="{DynamicResource BlackGrey}"
+                    CornerRadius="8">
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="28" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="28" />
+                                <ColumnDefinition Width="28" />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Grid.Column="0"
+                                Height="28"
+                                Source="{SvgImage /Assets/Icons/Accounts/instagram-account.svg}" />
+                            <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                <TextBlock Text="Account Instagram" />
+                                <TextBlock FontSize="10" Text="https://instagram.com" />
+                            </StackPanel>
+
+                            <control:StarRating
+                                Grid.Column="2"
+                                Width="15"
+                                Height="14" />
+                            <Button Grid.Column="3">
+                                <PathIcon Height="10" Data="{DynamicResource DotMenu}" />
+                            </Button>
+
+                        </Grid>
+                        <Border
+                            Margin="0,8"
+                            BorderBrush="{DynamicResource SystemGray}"
+                            BorderThickness="0,1,0,0" />
+                        <StackPanel Margin="25,0">
+                            <controls:LoginTextBox
+                                Height="25"
+                                MinWidth="150"
+                                VerticalContentAlignment="Center"
+                                Background="{DynamicResource BlocksPrimary}"
+                                CornerRadius="5,5,0,0"
+                                Watermark="Login" />
+                            <Border BorderBrush="{DynamicResource SystemGray}" BorderThickness="0,1,0,0" />
+                            <controls:PasswordTextBox
+                                Height="25"
+                                MinWidth="150"
+                                VerticalContentAlignment="Center"
+                                Background="{DynamicResource BlocksPrimary}"
+                                CornerRadius="0,0,5,5"
+                                Watermark="Password" />
+                            <StackPanel Margin="5,3" Orientation="Horizontal">
+                                <PathIcon
+                                    Width="10"
+                                    Data="{DynamicResource Info}"
+                                    Foreground="{DynamicResource SystemErrorText}" />
+                                <TextBlock
+                                    Margin="5,0,0,0"
+                                    VerticalAlignment="Center"
+                                    FontSize="10"
+                                    Foreground="{DynamicResource SystemErrorText}"
+                                    Text="Password required your attention" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>

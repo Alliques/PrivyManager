@@ -21,6 +21,9 @@
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/ControlPanel.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/Common.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/Styles/LockScreen.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/Styles/LoginTextBox.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/Styles/PasswordTextBox.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/Accounts/AccountCard.axaml" />
         <StyleInclude Source="avares://PrivyManager/Styles/ControlSyles.axaml" />
     </Application.Styles>
     <Application.Resources>

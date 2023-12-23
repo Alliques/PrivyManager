@@ -23,7 +23,7 @@ namespace PrivyManager.ViewModels
 
         public MainWindowViewModel(IServiceProvider serviceProvider)
         {
-            CurrentViewModel = new DocumentsViewModel();
+            CurrentViewModel = new MainViewModel();
             _serviceProvider = serviceProvider;
         }
 

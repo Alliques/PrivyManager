@@ -121,7 +121,7 @@
                     <controls:ControlPanel Height="80" />
 
                     <!--  Main content  -->
-                    <Border Grid.Row="1" Background="White">
+                    <Border Grid.Row="1">
                         <ContentControl Content="{Binding CurrentViewModel, Mode=TwoWay}">
                             <ContentControl.DataTemplates>
                                 <DataTemplate DataType="{x:Type viewModes:MainViewModel}">
