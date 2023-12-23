@@ -37,4 +37,10 @@
 
     <SolidColorBrush x:Key="MenuFlyoutPresenterBackground">Red</SolidColorBrush>
 
+    <Color x:Key="TextCaret">#FFFAF5</Color>
+
+
+    <SolidColorBrush x:Key="TextCaretBrush" Color="{StaticResource TextCaret}" />
+    <SolidColorBrush x:Key="TextSelectionBrush" Color="{StaticResource JacoLastBreathDark}" />
+
 </ResourceDictionary>

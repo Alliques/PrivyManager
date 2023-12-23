@@ -1,0 +1,178 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:commands="using:PrivyManager.Commands"
+    xmlns:controls="using:PrivyManager.Controls.Styles">
+    <Design.PreviewWith>
+        <controls:CommonTextBox
+            Width="250"
+            Height="15"
+            Background="{DynamicResource BlocksPrimary}"
+            CornerRadius="5,5,0,0"
+            Watermark="Password" />
+    </Design.PreviewWith>
+
+    <Style Selector="controls|CommonTextBox">
+        <!--  Set Defaults  -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <DataValidationErrors>
+                    <Panel>
+                        <Border
+                            Name="PART_BorderElement"
+                            MinWidth="{TemplateBinding MinWidth}"
+                            MinHeight="{TemplateBinding MinHeight}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}" />
+
+                        <Border Margin="{TemplateBinding BorderThickness}" Padding="20,0,15,0">
+                            <Grid ColumnDefinitions="Auto,*,Auto,Auto,Auto">
+                                <ContentPresenter
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="1"
+                                    Content="{TemplateBinding InnerLeftContent}" />
+                                <DockPanel
+                                    x:Name="PART_InnerDockPanel"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="1"
+                                    Margin="{TemplateBinding Padding}">
+                                    <TextBlock
+                                        Name="PART_FloatingWatermark"
+                                        DockPanel.Dock="Top"
+                                        FontSize="{TemplateBinding FontSize}"
+                                        Foreground="{DynamicResource SystemAccentColor}"
+                                        IsVisible="False"
+                                        Text="{TemplateBinding Watermark}" />
+                                    <ScrollViewer
+                                        Name="PART_ScrollViewer"
+                                        AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+                                        BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}"
+                                        HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                                        IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+                                        VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+                                        <Panel>
+                                            <TextBlock
+                                                Name="PART_Watermark"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                IsVisible="{TemplateBinding Text,
+                                                                            Converter={x:Static StringConverters.IsNullOrEmpty}}"
+                                                Opacity="0.5"
+                                                Text="{TemplateBinding Watermark}"
+                                                TextAlignment="{TemplateBinding TextAlignment}"
+                                                TextWrapping="{TemplateBinding TextWrapping}" />
+                                            <TextPresenter
+                                                Name="PART_TextPresenter"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                CaretBrush="{DynamicResource TextCaretBrush}"
+                                                CaretIndex="{TemplateBinding CaretIndex}"
+                                                LetterSpacing="{TemplateBinding LetterSpacing}"
+                                                LineHeight="{TemplateBinding LineHeight}"
+                                                PasswordChar="{TemplateBinding PasswordChar}"
+                                                RevealPassword="{TemplateBinding RevealPassword}"
+                                                SelectionBrush="{DynamicResource TextSelectionBrush}"
+                                                SelectionEnd="{TemplateBinding SelectionEnd}"
+                                                SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                                                SelectionStart="{TemplateBinding SelectionStart}"
+                                                Text="{TemplateBinding Text,
+                                                                       Mode=TwoWay}"
+                                                TextAlignment="{TemplateBinding TextAlignment}"
+                                                TextWrapping="{TemplateBinding TextWrapping}" />
+                                        </Panel>
+                                        <!--  Problem with cursor on icons  -->
+                                        <!--<ScrollViewer.Styles>
+                                            <Style Selector="ScrollContentPresenter#PART_ContentPresenter">
+                                                <Setter Property="Cursor" Value="IBeam" />
+                                            </Style>
+                                        </ScrollViewer.Styles>-->
+                                    </ScrollViewer>
+                                </DockPanel>
+                                <ContentPresenter
+                                    Grid.Column="2"
+                                    Grid.ColumnSpan="1"
+                                    Content="{TemplateBinding InnerRightContent}" />
+                                <Button
+                                    Grid.Column="3"
+                                    Grid.ColumnSpan="1"
+                                    Padding="0"
+                                    Classes="animated"
+                                    Command="{TemplateBinding RevealPasswordCommand}"
+                                    IsVisible="{Binding RevealPasswordIcon, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <PathIcon Height="8" Data="{DynamicResource Eye}" />
+                                </Button>
+                                <Button
+                                    Grid.Column="4"
+                                    Grid.ColumnSpan="1"
+                                    Padding="0"
+                                    Classes="animated"
+                                    Command="{TemplateBinding CopyCommand}"
+                                    IsVisible="{Binding CopyIcon, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <PathIcon Height="12" Data="{DynamicResource Copy}" />
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </Panel>
+                </DataValidationErrors>
+            </ControlTemplate>
+            <!--<ControlTemplate>
+                <Border
+                    Name="PART_BorderElement"
+                    Padding="20,0,0,0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{Binding CornerRadius,RelativeSource={RelativeSource TemplatedParent}}}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="35" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Name="PART_Watermark"
+                            Grid.Column="0"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="Center"
+                            Foreground="Gray"
+                            IsVisible="{TemplateBinding Text,
+                                                        Converter={x:Static StringConverters.IsNullOrEmpty}}"
+                            Opacity="0.5"
+                            Text="{TemplateBinding Watermark,
+                                                   Mode=TwoWay}"
+                            TextAlignment="{TemplateBinding TextAlignment}"
+                            TextWrapping="{TemplateBinding TextWrapping}" />
+                        <TextPresenter
+                            Name="PART_TextPresenter"
+                            Grid.Column="0"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            CaretBrush="{TemplateBinding CaretBrush}"
+                            CaretIndex="{TemplateBinding CaretIndex}"
+                            PasswordChar="{TemplateBinding PasswordChar}"
+                            RevealPassword="{TemplateBinding RevealPassword}"
+                            SelectionBrush="{DynamicResource JacoLastBreathLight}"
+                            SelectionEnd="{TemplateBinding SelectionEnd}"
+                            SelectionForegroundBrush="{DynamicResource SystemWhite}"
+                            SelectionStart="{TemplateBinding SelectionStart}"
+                            Text="{TemplateBinding Text,
+                                                   Mode=TwoWay}"
+                            TextAlignment="{TemplateBinding TextAlignment}"
+                            TextWrapping="{TemplateBinding TextWrapping}" />
+                        <Button Grid.Column="1" Classes="animated">
+                            <PathIcon Width="15" Data="{DynamicResource Eye}" />
+                        </Button>
+                        <Button Grid.Column="2" Classes="animated">
+                            <PathIcon Width="10" Data="{DynamicResource Copy}" />
+                        </Button>
+                    </Grid>
+                </Border>
+            </ControlTemplate>-->
+        </Setter>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="MinWidth" Value="120" />
+        <Setter Property="MinHeight" Value="25" />
+    </Style>
+</Styles>

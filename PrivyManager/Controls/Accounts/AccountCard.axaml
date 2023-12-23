@@ -47,7 +47,7 @@
                             BorderBrush="{DynamicResource SystemGray}"
                             BorderThickness="0,1,0,0" />
                         <StackPanel Margin="25,0">
-                            <controls:LoginTextBox
+                            <controls:CommonTextBox
                                 Height="25"
                                 MinWidth="150"
                                 VerticalContentAlignment="Center"
@@ -55,12 +55,14 @@
                                 CornerRadius="5,5,0,0"
                                 Watermark="Login" />
                             <Border BorderBrush="{DynamicResource SystemGray}" BorderThickness="0,1,0,0" />
-                            <controls:PasswordTextBox
+                            <controls:CommonTextBox
                                 Height="25"
                                 MinWidth="150"
                                 VerticalContentAlignment="Center"
                                 Background="{DynamicResource BlocksPrimary}"
                                 CornerRadius="0,0,5,5"
+                                PasswordChar="*"
+                                RevealPasswordIcon="true"
                                 Watermark="Password" />
                             <StackPanel Margin="5,3" Orientation="Horizontal">
                                 <PathIcon

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Folder Include="Assets\Icons\Accounts\" />
+    <Folder Include="Controls\UserControl\" />
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
     <Content Include="Assets\avalonia-logo.ico" />
@@ -28,12 +29,13 @@
     <PackageReference Include="CommunityToolkit.Common" Version="8.2.1" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="TextCopy" Version="6.2.1" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <Compile Update="Controls\Styles\PasswordTextBox.axaml.cs">
-      <DependentUpon>PasswordTextBox.axaml</DependentUpon>
+    <Compile Update="Controls\Styles\CommonTextBox.axaml.cs">
+      <DependentUpon>CommonTextBox.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\Styles\LoginTextBox.axaml.cs">
       <DependentUpon>LoginTextBox.axaml</DependentUpon>
