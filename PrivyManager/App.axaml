@@ -9,20 +9,22 @@
         <FluentTheme />
     </Application.Styles>
     <Application.Styles>
-        <Style Selector="ContentPresenter">
+        <!--<Style Selector="ContentPresenter">
             <Setter Property="TextBlock.FontFamily" Value="/Assets/Fonts/LatoMedium.ttf#Lato" />
-        </Style>
+
+        </Style>-->
         <!--<FluentTheme Mode="Light" />-->
         <StyleInclude Source="avares://PrivyManager/Styles/BaseStyle.axaml" />
-        <StyleInclude Source="avares://PrivyManager/Controls/Styles/Menu.axaml" />
-        <StyleInclude Source="avares://PrivyManager/Controls/Styles/MenuItem.axaml" />
-        <StyleInclude Source="avares://PrivyManager/Controls/Styles/MenuButton.axaml" />
-        <StyleInclude Source="avares://PrivyManager/Controls/Styles/SearchTextBox.axaml" />
-        <StyleInclude Source="avares://PrivyManager/Controls/Styles/ControlPanel.axaml" />
-        <StyleInclude Source="avares://PrivyManager/Controls/Styles/Common.axaml" />
-        <StyleInclude Source="avares://PrivyManager/Controls/Styles/LockScreen.axaml" />
-        <StyleInclude Source="avares://PrivyManager/Controls/Styles/CommonTextBox.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/Menu.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/MenuItem.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/MenuButton.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/SearchTextBox.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/ControlPanel.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/Common.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/LockScreen.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/CommonTextBox.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/Accounts/AccountCard.axaml" />
+        <StyleInclude Source="avares://PrivyManager/Controls/FlyoutAddButton.axaml" />
         <StyleInclude Source="avares://PrivyManager/Styles/ControlSyles.axaml" />
     </Application.Styles>
     <Application.Resources>
@@ -31,6 +33,7 @@
                 <ResourceInclude Source="/Styles/ControlTemplates.axaml" />
                 <ResourceInclude Source="/Resources/SvgIcons.axaml" />
                 <ResourceInclude Source="/Styles/Colors.axaml" />
+                <ResourceInclude Source="/Resources/Fonts.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

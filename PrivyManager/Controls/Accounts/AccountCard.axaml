@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:accountCard="using:PrivyManager.Controls.Accounts"
     xmlns:control="using:PrivyManager.Controls"
-    xmlns:controls="using:PrivyManager.Controls.Styles">
+    xmlns:controls="using:PrivyManager.Controls">
     <Design.PreviewWith>
         <accountCard:AccountCard Width="300" />
     </Design.PreviewWith>

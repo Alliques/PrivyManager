@@ -1,0 +1,7 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:o="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+    <FontFamily x:Key="LatoMedium">avares://PrivyManager/Assets/Fonts/LatoMedium.ttf#Lato</FontFamily>
+    <FontFamily x:Key="LatoBold">avares://PrivyManager/Assets/Fonts/LatoBold.ttf#Lato</FontFamily>
+</ResourceDictionary>

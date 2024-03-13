@@ -1,0 +1,75 @@
+<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:PrivyManager.Controls"
+    xmlns:converters="clr-namespace:PrivyManager.Converters;assembly=PrivyManager"
+    xmlns:overridedControls="clr-namespace:PrivyManager.Controls.Overrided.Panels;assembly=PrivyManager"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <Design.PreviewWith>
+        <controls:FlyoutAddButton FontFamily="{StaticResource LatoMedium}" FontSize="8" />
+    </Design.PreviewWith>
+
+    <Style Selector="controls|FlyoutAddButton">
+        <Style.Resources>
+            <converters:HalfSizeConverter x:Key="halfSizeConverter" />
+        </Style.Resources>
+        <!--  Set Defaults  -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    MinWidth="75"
+                    MinHeight="20"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="7">
+                    <Grid>
+                        <ContentControl
+                            Margin="0,0,30,0"
+                            Padding="10,0,0,0"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Background="Transparent"
+                            FontFamily="{TemplateBinding FontFamily}"
+                            ZIndex="1">
+                            <ContentControl.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <PathIcon
+                                        Width="{Binding ElementName=textTitle, Path=FontSize, Mode=OneWay}"
+                                        Data="{StaticResource Plus}"
+                                        Foreground="{StaticResource SemiBlack}" />
+                                    <Label
+                                        x:Name="textTitle"
+                                        Margin="5,0,0,0"
+                                        VerticalAlignment="Center"
+                                        Content="Add"
+                                        FontFamily="{TemplateBinding FontFamily}"
+                                        FontSize="{TemplateBinding FontSize}"
+                                        Foreground="{StaticResource SemiBlack}" />
+                                </StackPanel>
+                            </ContentControl.Content>
+                        </ContentControl>
+                        <Button
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            HorizontalContentAlignment="Right"
+                            Background="Transparent"
+                            Flyout="{TemplateBinding Flyout}">
+                            <PathIcon
+                                Width="{Binding ElementName=textTitle, Path=FontSize, Mode=OneWay}"
+                                Height="{Binding $self.Height}"
+                                Margin="0,1,0,0"
+                                Data="{DynamicResource DownArrow}"
+                                Foreground="{DynamicResource SemiBlack}" />
+                            <Button.Styles>
+                                <Style Selector="Button:pressed">
+                                    <Setter Property="RenderTransform" Value="none" />
+                                </Style>
+                                <Style Selector="Button:pointerover  /template/ ContentPresenter#PART_ContentPresenter">
+                                    <Setter Property="Background" Value="Transparent" />
+                                </Style>
+                            </Button.Styles>
+                        </Button>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>

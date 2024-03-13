@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Styling;
 
-namespace PrivyManager.Controls.Styles;
+namespace PrivyManager.Controls;
 
 public class LoginTextBox : TextBox, IStyleable
 {
@@ -18,7 +18,7 @@ public class LoginTextBox : TextBox, IStyleable
 
     public Brush? IconColor
     {
-        get => (Brush)GetValue(IconColorProperty);
+        get => GetValue(IconColorProperty);
         set => SetValue(IconColorProperty, value);
     }
 

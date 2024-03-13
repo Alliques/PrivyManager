@@ -4,13 +4,23 @@ using Avalonia.Data.Converters;
 using System;
 using System.Globalization;
 
-namespace PrivyManager.Styles.Converters
+namespace PrivyManager.Converters
 {
-    public class CornerRadiusConverter : IValueConverter
+    public class HalfSizeConverter : IValueConverter
     {
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            return new CornerRadius((double)(value ??= 0d) * 0.5);
+            if (value != null)
+            {
+                if (parameter != null)
+                {
+                    return (double)value / double.Parse(parameter.ToString());
+                }
+
+                return (double)value / 2;
+            }
+
+            return 0;
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

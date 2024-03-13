@@ -1,5 +1,11 @@
 <Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Label Content="Lorem ipsum avares" Foreground="Black" />
+    </Design.PreviewWith>
     <Style Selector="Button:pointerover">
         <Setter Property="Background" Value="Red" />
+    </Style>
+    <Style Selector="TextBlock, Label">
+        <Setter Property="TextBlock.FontFamily" Value="{DynamicResource LatoMedium}" />
     </Style>
 </Styles>

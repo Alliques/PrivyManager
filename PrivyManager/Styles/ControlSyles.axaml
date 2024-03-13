@@ -1,9 +1,9 @@
 <Styles
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:converter="using:PrivyManager.Styles.Converters">
+    xmlns:converter="using:PrivyManager.Converters">
     <Styles.Resources>
-        <converter:CornerRadiusConverter x:Key="cornerRadiusConverter" />
+        <converter:CornerRadiusHalfSizeConverter x:Key="cornerRadiusHalfSizeConverter" />
     </Styles.Resources>
     <Design.PreviewWith>
         <Border Padding="20">
@@ -15,26 +15,28 @@
         </Border>
     </Design.PreviewWith>
 
-    <!--  Common styles  -->
+    <!--  Common controls styles  -->
     <!--  Button  -->
     <Style Selector="Button">
         <Setter Property="Background" Value="Transparent" />
     </Style>
-    <Style Selector="Button:pointerover /template/ ContentPresenter">
+    <!--<Style Selector="Button:pointerover /template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
-    </Style>
-
-    <Style Selector="Button.animated">
+    </Style>-->
+    <!--<Style Selector="Button:pressed /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>-->
+    <!--<Style Selector="Button.animated">
         <Setter Property="Transitions">
             <Transitions>
                 <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2" />
             </Transitions>
         </Setter>
-    </Style>
-    <Style Selector="Button.animated:pointerover /template/ ContentPresenter">
+    </Style>-->
+    <!--<Style Selector="Button.animated:pointerover /template/ ContentPresenter">
         <Setter Property="RenderTransform" Value="scale(1.2)" />
         <Setter Property="Opacity" Value="0.6" />
-    </Style>
+    </Style>-->
 
     <!--  Text  -->
     <Style Selector="TextBlock">
@@ -64,7 +66,7 @@
         <Setter Property="CaretBrush" Value="{DynamicResource SystemWhiteBrush}" />
     </Style>
 
-    <!--  Common TextBox  -->
+    <!--  TextBox common styles  -->
 
     <Style Selector="TextBox">
         <Setter Property="Template">
@@ -119,7 +121,7 @@
     </Style>
 
     <Style Selector="TextBox.Rounded">
-        <Setter Property="CornerRadius" Value="{Binding Path=Height, Priority=Style, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource cornerRadiusConverter}}" />
+        <Setter Property="CornerRadius" Value="{Binding Path=Height, Priority=Style, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource cornerRadiusHalfSizeConverter}}" />
     </Style>
 
     <Style Selector="TextBox:pointerover">

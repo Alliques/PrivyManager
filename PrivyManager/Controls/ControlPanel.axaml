@@ -3,7 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:PrivyManager.Controls">
     <Design.PreviewWith>
-        <controls:ControlPanel />
+        <Border Width="850">
+            <controls:ControlPanel Width="800" />
+        </Border>
+
     </Design.PreviewWith>
 
     <Style Selector="controls|ControlPanel">
@@ -30,33 +33,31 @@
                             </Grid.ColumnDefinitions>
 
                             <!--  Add buttons  -->
-                            <!--<Grid Grid.Column="0">
-                    <StackPanel x:Name="btnContainer" Orientation="Horizontal">
-                        <Button
-                            Width="120"
-                            VerticalAlignment="Stretch"
-                            Background="{DynamicResource JacoLastBreathLight}"
-                            Content="+ Add">
-                            <Button.Flyout>
-                                <Flyout FlyoutPresenterClasses="flyoutCommonStyle" Placement="BottomEdgeAlignedLeft">
-                                    <StackPanel>
-                                        <Button Content="Add" />
-                                        <Button Content="Remove" />
-                                    </StackPanel>
-                                </Flyout>
-                            </Button.Flyout>
-                        </Button>
-                        <Button
-                            Width="36"
-                            MinHeight="20"
-                            Margin="5,0,0,0"
-                            VerticalAlignment="Stretch"
-                            HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            Background="{DynamicResource JacoLastBreathLight}"
-                            Content="+" />
-                    </StackPanel>
-                </Grid>-->
+                            <Grid Grid.Column="0">
+                                <StackPanel x:Name="btnContainer" Orientation="Horizontal">
+                                    <controls:FlyoutAddButton
+                                        Width="120"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Stretch"
+                                        Background="{StaticResource JacoLastBreathLight}"
+                                        FontFamily="{StaticResource LatoBold}">
+                                        <controls:FlyoutAddButton.Flyout>
+                                            <Flyout Placement="Bottom" ShowMode="TransientWithDismissOnPointerMoveAway">asdasdasd</Flyout>
+                                        </controls:FlyoutAddButton.Flyout>
+                                    </controls:FlyoutAddButton>
+                                    <Button
+                                        Width="36"
+                                        MinHeight="20"
+                                        Margin="5,0,0,0"
+                                        VerticalAlignment="Stretch"
+                                        HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center"
+                                        Background="{DynamicResource JacoLastBreathLight}"
+                                        Content="+"
+                                        CornerRadius="7" />
+                                </StackPanel>
+                            </Grid>
+
                             <Grid Grid.Column="2">
                                 <!--  Search  -->
                                 <controls:SearchTextBox
@@ -70,19 +71,6 @@
                                     Icon="{DynamicResource Search}"
                                     IconColor="{DynamicResource SystemGrayBrush}" />
                             </Grid>
-                            <!--<Grid Grid.Column="4">
-                    <Button
-                        Width="36"
-                        VerticalAlignment="Stretch"
-                        Background="Wheat"
-                        CornerRadius="18" />
-                    <Button
-                        Width="36"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Stretch"
-                        Background="Wheat"
-                        CornerRadius="18" />
-                </Grid>-->
                         </Grid>
                     </Grid>
                 </Border>

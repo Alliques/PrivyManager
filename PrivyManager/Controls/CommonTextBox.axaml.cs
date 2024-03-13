@@ -9,7 +9,7 @@ using System;
 using System.Windows.Input;
 using TextCopy;
 
-namespace PrivyManager.Controls.Styles;
+namespace PrivyManager.Controls;
 
 public class CommonTextBox : TextBox, IStyleable
 {
@@ -42,7 +42,7 @@ public class CommonTextBox : TextBox, IStyleable
 
     public Brush? IconColor
     {
-        get => (Brush)GetValue(IconColorProperty);
+        get => GetValue(IconColorProperty);
         set => SetValue(IconColorProperty, value);
     }
 
@@ -76,7 +76,10 @@ public class CommonTextBox : TextBox, IStyleable
 
     private void ExecuteCopyCommand()
     {
-        ClipboardService.SetText(Text);
+        if (!string.IsNullOrEmpty(Text))
+        {
+            ClipboardService.SetText(Text);
+        }
     }
 
     private void ExecuteShowPasswordCommand()

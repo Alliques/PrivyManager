@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Assets\Icons\Accounts\" />
-    <Folder Include="Controls\UserControl\" />
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
     <Content Include="Assets\avalonia-logo.ico" />
@@ -34,11 +33,16 @@
 
 
   <ItemGroup>
-    <Compile Update="Controls\Styles\CommonTextBox.axaml.cs">
+    <Compile Update="Controls\CommonTextBox.axaml.cs">
       <DependentUpon>CommonTextBox.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\Styles\LoginTextBox.axaml.cs">
+    <Compile Update="Controls\LoginTextBox.axaml.cs">
       <DependentUpon>LoginTextBox.axaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Controls\FlyoutAddButton.axaml" />
   </ItemGroup>
 </Project>

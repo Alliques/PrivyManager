@@ -61,11 +61,13 @@ namespace PrivyManager.Controls
 
             if (control.Fill == Brushes.Gold)
             {
+                IsChecked = false;
                 control.Stroke = Brushes.White;
                 control.Fill = Brushes.Transparent;
             }
             else
             {
+                IsChecked = true;
                 control.Stroke = Brushes.Gold;
                 control.Fill = Brushes.Gold;
             }
