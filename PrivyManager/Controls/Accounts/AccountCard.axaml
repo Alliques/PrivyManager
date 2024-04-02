@@ -37,10 +37,23 @@
                                 Grid.Column="2"
                                 Width="15"
                                 Height="14" />
-                            <Button Grid.Column="3">
+                            <Button Grid.Column="3" Classes="IconButton">
                                 <PathIcon Height="10" Data="{DynamicResource DotMenu}" />
+                                <Button.Flyout>
+                                    <Flyout>
+                                        <StackPanel Margin="0">
+                                            <Button
+                                                HorizontalAlignment="Stretch"
+                                                Classes="Regular"
+                                                Content="Edit" />
+                                            <Button
+                                                HorizontalAlignment="Stretch"
+                                                Classes="Regular"
+                                                Content="Delete" />
+                                        </StackPanel>
+                                    </Flyout>
+                                </Button.Flyout>
                             </Button>
-
                         </Grid>
                         <Border
                             Margin="0,8"
@@ -64,6 +77,8 @@
                                 PasswordChar="*"
                                 RevealPasswordIcon="true"
                                 Watermark="Password" />
+
+                            <!--  Error  -->
                             <StackPanel Margin="5,3" Orientation="Horizontal">
                                 <PathIcon
                                     Width="10"

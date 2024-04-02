@@ -6,7 +6,7 @@
     <Design.PreviewWith>
         <controls:CommonTextBox
             Width="250"
-            Height="15"
+            Height="25"
             Background="{DynamicResource BlocksPrimary}"
             CornerRadius="5,5,0,0"
             Watermark="Password" />
@@ -82,12 +82,6 @@
                                                 TextAlignment="{TemplateBinding TextAlignment}"
                                                 TextWrapping="{TemplateBinding TextWrapping}" />
                                         </Panel>
-                                        <!--  Problem with cursor on icons  -->
-                                        <!--<ScrollViewer.Styles>
-                                            <Style Selector="ScrollContentPresenter#PART_ContentPresenter">
-                                                <Setter Property="Cursor" Value="IBeam" />
-                                            </Style>
-                                        </ScrollViewer.Styles>-->
                                     </ScrollViewer>
                                 </DockPanel>
                                 <ContentPresenter
@@ -98,7 +92,7 @@
                                     Grid.Column="3"
                                     Grid.ColumnSpan="1"
                                     Padding="0"
-                                    Classes="animated"
+                                    Classes="IconButton"
                                     Command="{TemplateBinding RevealPasswordCommand}"
                                     IsVisible="{Binding RevealPasswordIcon, RelativeSource={RelativeSource TemplatedParent}}">
                                     <PathIcon Height="8" Data="{DynamicResource Eye}" />
@@ -107,7 +101,7 @@
                                     Grid.Column="4"
                                     Grid.ColumnSpan="1"
                                     Padding="0"
-                                    Classes="animated"
+                                    Classes="IconButton"
                                     Command="{TemplateBinding CopyCommand}"
                                     IsVisible="{Binding CopyIcon, RelativeSource={RelativeSource TemplatedParent}}">
                                     <PathIcon Height="12" Data="{DynamicResource Copy}" />
@@ -117,59 +111,6 @@
                     </Panel>
                 </DataValidationErrors>
             </ControlTemplate>
-            <!--<ControlTemplate>
-                <Border
-                    Name="PART_BorderElement"
-                    Padding="20,0,0,0"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="{Binding CornerRadius,RelativeSource={RelativeSource TemplatedParent}}}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="30" />
-                            <ColumnDefinition Width="35" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                            Name="PART_Watermark"
-                            Grid.Column="0"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="Center"
-                            Foreground="Gray"
-                            IsVisible="{TemplateBinding Text,
-                                                        Converter={x:Static StringConverters.IsNullOrEmpty}}"
-                            Opacity="0.5"
-                            Text="{TemplateBinding Watermark,
-                                                   Mode=TwoWay}"
-                            TextAlignment="{TemplateBinding TextAlignment}"
-                            TextWrapping="{TemplateBinding TextWrapping}" />
-                        <TextPresenter
-                            Name="PART_TextPresenter"
-                            Grid.Column="0"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                            CaretBrush="{TemplateBinding CaretBrush}"
-                            CaretIndex="{TemplateBinding CaretIndex}"
-                            PasswordChar="{TemplateBinding PasswordChar}"
-                            RevealPassword="{TemplateBinding RevealPassword}"
-                            SelectionBrush="{DynamicResource JacoLastBreathLight}"
-                            SelectionEnd="{TemplateBinding SelectionEnd}"
-                            SelectionForegroundBrush="{DynamicResource SystemWhite}"
-                            SelectionStart="{TemplateBinding SelectionStart}"
-                            Text="{TemplateBinding Text,
-                                                   Mode=TwoWay}"
-                            TextAlignment="{TemplateBinding TextAlignment}"
-                            TextWrapping="{TemplateBinding TextWrapping}" />
-                        <Button Grid.Column="1" Classes="animated">
-                            <PathIcon Width="15" Data="{DynamicResource Eye}" />
-                        </Button>
-                        <Button Grid.Column="2" Classes="animated">
-                            <PathIcon Width="10" Data="{DynamicResource Copy}" />
-                        </Button>
-                    </Grid>
-                </Border>
-            </ControlTemplate>-->
         </Setter>
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="MinWidth" Value="120" />

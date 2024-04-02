@@ -25,24 +25,36 @@
         </Border>
     </Design.PreviewWith>
 
-    <!--  Toggle button  -->
-    <Style Selector="ToggleButton.Transparent:unchecked /template/ ContentPresenter#PART_ContentPresenter">
+    <!--  Common Button  -->
+    <Style Selector="Button.Regular:unchecked /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLight}" />
+    </Style>
+    <Style Selector="Button.Regular:checked /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource JacoLastBreathDark}" />
+    </Style>
+    <Style Selector="Button.Regular:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource JacoLastBreathDark}" />
+    </Style>
+
+    <!--  Icon button  -->
+    <Style Selector="Button.IconButton:unchecked /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
     </Style>
-    <Style Selector="ToggleButton.Transparent:checked /template/ ContentPresenter#PART_ContentPresenter">
+    <Style Selector="Button.IconButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.IconButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
     </Style>
 
     <!--  Flyout for combobox  -->
-    <Style Selector="FlyoutPresenter.flyoutCommonStyle">
+    <Style Selector="FlyoutPresenter">
         <Setter Property="Background" Value="{DynamicResource JacoLastBreathLight}" />
     </Style>
-    <Style Selector="FlyoutPresenter.flyoutCommonStyle>Button">
-        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLight}" />
+    <Style Selector="FlyoutPresenter">
+        <Setter Property="Padding" Value="0" />
     </Style>
-
-    <!--  Button  -->
-    <Style Selector="Button:pointerover  /template/ ContentPresenter">
+    <Style Selector="FlyoutPresenter>Button">
         <Setter Property="Background" Value="{DynamicResource JacoLastBreathLight}" />
     </Style>
 </Styles>

@@ -11,9 +11,10 @@
     xmlns:views="using:PrivyManager.View"
     Title="PrivyManager"
     d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignWidth="900"
     x:DataType="viewModes:MainWindowViewModel"
     Icon="/Assets/avalonia-logo.ico"
+    TransparencyLevelHint="AcrylicBlur"
     mc:Ignorable="d">
 
     <Design.DataContext>
@@ -31,10 +32,11 @@
             </Grid.ColumnDefinitions>
 
             <!--  Lock screen  -->
-            <!--<controls:LockScreen
+            <controls:LockScreen
                 Grid.ColumnSpan="2"
+                IsVisible="False"
                 Opacity="1"
-                ZIndex="2" />-->
+                ZIndex="2" />
 
             <!--  Menu  -->
             <controls:Menu>

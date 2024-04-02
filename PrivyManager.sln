@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrivyManager", "PrivyManager\PrivyManager.csproj", "{D99CB261-B56A-482C-BC5C-C50B41EA2EC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrivyManager.Domain", "PrivyManager.Domain\PrivyManager.Domain.csproj", "{FC935ABD-5F60-4E68-A361-50F60E9A1871}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrivyManager.Domain", "PrivyManager.Domain\PrivyManager.Domain.csproj", "{FC935ABD-5F60-4E68-A361-50F60E9A1871}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrivyManager.Encryption", "PrivyManager.Encryption\PrivyManager.Encryption.csproj", "{349E3B45-C766-414D-A61B-C538888A5803}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FC935ABD-5F60-4E68-A361-50F60E9A1871}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC935ABD-5F60-4E68-A361-50F60E9A1871}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC935ABD-5F60-4E68-A361-50F60E9A1871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349E3B45-C766-414D-A61B-C538888A5803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349E3B45-C766-414D-A61B-C538888A5803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349E3B45-C766-414D-A61B-C538888A5803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349E3B45-C766-414D-A61B-C538888A5803}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

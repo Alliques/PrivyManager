@@ -3,7 +3,7 @@
         <Label Content="Lorem ipsum avares" Foreground="Black" />
     </Design.PreviewWith>
     <Style Selector="Button:pointerover">
-        <Setter Property="Background" Value="Red" />
+        <Setter Property="Background" Value="{DynamicResource JacoLastBreathLight}" />
     </Style>
     <Style Selector="TextBlock, Label">
         <Setter Property="TextBlock.FontFamily" Value="{DynamicResource LatoMedium}" />

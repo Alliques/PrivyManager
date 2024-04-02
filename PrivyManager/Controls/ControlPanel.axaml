@@ -53,6 +53,7 @@
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center"
                                         Background="{DynamicResource JacoLastBreathLight}"
+                                        Classes="Regular"
                                         Content="+"
                                         CornerRadius="7" />
                                 </StackPanel>
