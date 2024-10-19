@@ -19,7 +19,7 @@
         <StyleInclude Source="avares://PrivyManager/Controls/MenuItem.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/MenuButton.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/SearchTextBox.axaml" />
-        <StyleInclude Source="avares://PrivyManager/Controls/ControlPanel.axaml" />
+        <!--<StyleInclude Source="avares://PrivyManager/Controls/ControlPanel.axaml" />-->
         <StyleInclude Source="avares://PrivyManager/Controls/Common.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/LockScreen.axaml" />
         <StyleInclude Source="avares://PrivyManager/Controls/CommonTextBox.axaml" />

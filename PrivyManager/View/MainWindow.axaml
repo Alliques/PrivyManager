@@ -53,42 +53,42 @@
                                 Classes="ListBoxItem"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
                                 IconData="{DynamicResource Main}"
-                                Type="{x:Static enums:MenuItems.Main}" />
+                                Type="{x:Static enums:Pages.Main}" />
                             <controls:MenuItem
                                 Title="Accounts"
                                 Classes="ListBoxItem"
                                 Count="56"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
                                 IconData="{DynamicResource Account}"
-                                Type="{x:Static enums:MenuItems.Accounts}" />
+                                Type="{x:Static enums:Pages.Accounts}" />
                             <controls:MenuItem
                                 Title="Bank cards"
                                 Classes="ListBoxItem"
                                 Count="3"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
                                 IconData="{DynamicResource Card}"
-                                Type="{x:Static enums:MenuItems.Cards}" />
+                                Type="{x:Static enums:Pages.Cards}" />
                             <controls:MenuItem
                                 Title="Documents"
                                 Classes="ListBoxItem"
                                 Count="99"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
                                 IconData="{DynamicResource Document}"
-                                Type="{x:Static enums:MenuItems.Documents}" />
+                                Type="{x:Static enums:Pages.Documents}" />
                             <controls:MenuItem
                                 Title="Address"
                                 Classes="ListBoxItem"
                                 Count="123"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
                                 IconData="{DynamicResource Address}"
-                                Type="{x:Static enums:MenuItems.Address}" />
+                                Type="{x:Static enums:Pages.Address}" />
                             <controls:MenuItem
                                 Title="Notes"
                                 Classes="ListBoxItem"
                                 Count="4"
                                 IconColor="{DynamicResource SystemWhiteBrush}"
                                 IconData="{DynamicResource Notes}"
-                                Type="{x:Static enums:MenuItems.Notes}" />
+                                Type="{x:Static enums:Pages.Notes}" />
                         </ListBox>
                         <Border
                             Height="2"

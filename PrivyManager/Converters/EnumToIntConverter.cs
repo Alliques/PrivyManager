@@ -14,7 +14,7 @@ namespace PrivyManager.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (MenuItems)value;
+            return (Pages)value;
         }
     }
 }

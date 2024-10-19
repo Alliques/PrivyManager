@@ -10,8 +10,11 @@
 
   <ItemGroup>
     <Folder Include="Assets\Icons\Accounts\" />
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <AvaloniaXaml Remove="Models\**" />
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
     <Content Include="Assets\avalonia-logo.ico" />
   </ItemGroup>
 

@@ -17,8 +17,8 @@ namespace PrivyManager.ViewModels.Controls
         public string? Content { get; set; }
         private void NavigateTo(object args)
         {
-            var viewModel = (MenuItems)args;
-            //var type = Activator.CreateInstance(NavigationHelper.GetViewModel((MenuItems)args), HostScreen);
+            var viewModel = (Pages)args;
+            //var type = Activator.CreateInstance(NavigationHelper.GetViewModel((Pages)args), HostScreen);
             //Router.Navigate.Execute(new AccountsViewModel(HostScreen));
         }
     }

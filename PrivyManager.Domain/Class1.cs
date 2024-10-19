@@ -1,6 +1,7 @@
 ﻿namespace PrivyManager.Domain
 {
-    public class BankCard
+    public class Class1
     {
+
     }
 }

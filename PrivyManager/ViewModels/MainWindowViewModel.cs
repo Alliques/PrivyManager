@@ -1,6 +1,6 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using Avalonia.Controls;
+using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.DependencyInjection;
-using PrivyManager.Controls;
 using PrivyManager.Enums;
 using System;
 
@@ -8,6 +8,7 @@ namespace PrivyManager.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
+        private readonly Window _mainWindow;
         private IServiceProvider _serviceProvider;
         private ViewModelBase? _currentViewModel;
 
@@ -21,8 +22,9 @@ namespace PrivyManager.ViewModels
             }
         }
 
-        public MainWindowViewModel(IServiceProvider serviceProvider)
+        public MainWindowViewModel(Window mainWindow, IServiceProvider serviceProvider)
         {
+            _mainWindow = mainWindow;
             CurrentViewModel = new MainViewModel();
             _serviceProvider = serviceProvider;
         }
@@ -30,26 +32,26 @@ namespace PrivyManager.ViewModels
         [RelayCommand]
         public void SelectedMenuItemChanged(object arg)
         {
-            if (arg is MenuItem && arg != null)
+            if (arg is PrivyManager.Controls.MenuItem && arg != null)
             {
-                switch ((arg as MenuItem).Type as MenuItems?)
+                switch (((PrivyManager.Controls.MenuItem)arg).Type as Pages?)
                 {
-                    case MenuItems.Main:
+                    case Pages.Main:
                         CurrentViewModel = _serviceProvider.GetService<MainViewModel>();
                         break;
-                    case MenuItems.Accounts:
+                    case Pages.Accounts:
                         CurrentViewModel = _serviceProvider.GetService<AccountsViewModel>();
                         break;
-                    case MenuItems.Cards:
+                    case Pages.Cards:
                         CurrentViewModel = _serviceProvider.GetService<CardsViewModel>();
                         break;
-                    case MenuItems.Documents:
+                    case Pages.Documents:
                         CurrentViewModel = _serviceProvider.GetService<DocumentsViewModel>();
                         break;
-                    case MenuItems.Address:
+                    case Pages.Address:
                         CurrentViewModel = _serviceProvider.GetService<AddressViewModel>();
                         break;
-                    case MenuItems.Notes:
+                    case Pages.Notes:
                         CurrentViewModel = _serviceProvider.GetService<NotesViewModel>();
                         break;
                     default:

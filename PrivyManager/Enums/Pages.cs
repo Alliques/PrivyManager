@@ -1,12 +1,13 @@
 ﻿namespace PrivyManager.Enums
 {
-    public enum MenuItems
+    public enum Pages
     {
         Main,
         Accounts,
         Cards,
         Documents,
         Address,
-        Notes
+        Notes,
+        Create
     }
 }

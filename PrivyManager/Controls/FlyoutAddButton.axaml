@@ -6,30 +6,82 @@
     xmlns:overridedControls="clr-namespace:PrivyManager.Controls.Overrided.Panels;assembly=PrivyManager"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <Design.PreviewWith>
-        <controls:FlyoutAddButton FontFamily="{StaticResource LatoMedium}" FontSize="8" />
+        <controls:FlyoutAddButton
+            Width="90"
+            Height="50"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Content="Add"
+            CornerRadius="5"
+            FontFamily="{StaticResource LatoMedium}"
+            FontSize="14"
+            Foreground="Black" />
     </Design.PreviewWith>
 
     <Style Selector="controls|FlyoutAddButton">
-        <Style.Resources>
-            <converters:HalfSizeConverter x:Key="halfSizeConverter" />
-        </Style.Resources>
-        <!--  Set Defaults  -->
         <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <PathIcon
+                            Grid.Column="0"
+                            Width="{Binding ElementName=textTitle, Path=FontSize, Mode=OneWay}"
+                            Height="{Binding $self.Height}"
+                            Margin="10,0"
+                            Data="{DynamicResource Plus}"
+                            Foreground="{DynamicResource SemiBlack}" />
+                        <TextBlock
+                            x:Name="textTitle"
+                            Grid.Column="1"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            FontSize="{TemplateBinding FontSize}"
+                            Foreground="{TemplateBinding Foreground}"
+                            Text="{TemplateBinding Content}" />
+                        <PathIcon
+                            Grid.Column="2"
+                            Width="{Binding ElementName=textTitle, Path=FontSize, Mode=OneWay}"
+                            Height="{Binding $self.Height}"
+                            Margin="10,0"
+                            Data="{DynamicResource DownArrow}"
+                            Foreground="{DynamicResource SemiBlack}" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <!--<Style.Resources>
+            <converters:HalfSizeConverter x:Key="halfSizeConverter" />
+        </Style.Resources>-->
+    <!--  Set Defaults  -->
+    <!--<Setter Property="Template">
             <ControlTemplate>
                 <Border
                     MinWidth="75"
                     MinHeight="20"
                     Background="{TemplateBinding Background}"
-                    CornerRadius="7">
+                    CornerRadius="{TemplateBinding CornerRadius}">
                     <Grid>
-                        <ContentControl
-                            Margin="0,0,30,0"
+                        <Button
+                            Margin="0,0,35,0"
                             Padding="10,0,0,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            Background="Transparent"
-                            FontFamily="{TemplateBinding FontFamily}"
-                            ZIndex="1">
-                            <ContentControl.Content>
+                            Background="{TemplateBinding Background}"
+                            Command="{TemplateBinding ButtonCommand}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            FontFamily="{TemplateBinding FontFamily}">
+                            <Button.Content>
                                 <StackPanel Orientation="Horizontal">
                                     <PathIcon
                                         Width="{Binding ElementName=textTitle, Path=FontSize, Mode=OneWay}"
@@ -44,13 +96,23 @@
                                         FontSize="{TemplateBinding FontSize}"
                                         Foreground="{StaticResource SemiBlack}" />
                                 </StackPanel>
-                            </ContentControl.Content>
-                        </ContentControl>
+                            </Button.Content>
+                            <Button.Styles>
+                                <Style Selector="Button:pressed">
+                                    <Setter Property="RenderTransform" Value="none" />
+                                </Style>
+                                <Style Selector="Button:pointerover  /template/ ContentPresenter#PART_ContentPresenter">
+                                    <Setter Property="Background" Value="Transparent" />
+                                </Style>
+                            </Button.Styles>
+                        </Button>
                         <Button
-                            HorizontalAlignment="Stretch"
+                            HorizontalAlignment="Right"
                             VerticalAlignment="Stretch"
                             HorizontalContentAlignment="Right"
-                            Background="Transparent"
+                            Background="{TemplateBinding Background}"
+                            Command="{TemplateBinding ExpandFlyoutCommand}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
                             Flyout="{TemplateBinding Flyout}">
                             <PathIcon
                                 Width="{Binding ElementName=textTitle, Path=FontSize, Mode=OneWay}"
@@ -62,14 +124,11 @@
                                 <Style Selector="Button:pressed">
                                     <Setter Property="RenderTransform" Value="none" />
                                 </Style>
-                                <Style Selector="Button:pointerover  /template/ ContentPresenter#PART_ContentPresenter">
-                                    <Setter Property="Background" Value="Transparent" />
-                                </Style>
                             </Button.Styles>
                         </Button>
                     </Grid>
                 </Border>
             </ControlTemplate>
         </Setter>
-    </Style>
+    </Style>-->
 </Styles>

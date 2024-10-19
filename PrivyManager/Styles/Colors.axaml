@@ -35,7 +35,7 @@
     <Color x:Key="SystemErrorText">#CF3940</Color>
     <SolidColorBrush x:Key="SystemErrorTextBrush" Color="{StaticResource SystemLightGray}" />
 
-    <SolidColorBrush x:Key="MenuFlyoutPresenterBackground">Red</SolidColorBrush>
+    <SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{StaticResource JacoLastBreathLight}" />
 
     <Color x:Key="TextCaret">#FFFAF5</Color>
 

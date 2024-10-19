@@ -39,6 +39,9 @@
     </Style>-->
 
     <!--  Text  -->
+    <Style Selector="ContentControl">
+        <Setter Property="FontFamily" Value="{DynamicResource LatoBold}" />
+    </Style>
     <Style Selector="TextBlock">
         <Setter Property="FontSize" Value="12" />
         <Setter Property="Foreground" Value="{DynamicResource SystemWhite}" />
