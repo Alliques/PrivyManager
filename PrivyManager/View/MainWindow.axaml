@@ -7,8 +7,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:enums="using:PrivyManager.Enums"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModes="using:PrivyManager.ViewModels"
-    xmlns:views="using:PrivyManager.View"
+    xmlns:view="using:PrivyManager.View"
+    xmlns:viewModes="using:PrivyManager.ViewModel"
     Title="PrivyManager"
     d:DesignHeight="450"
     d:DesignWidth="900"
@@ -18,10 +18,6 @@
     mc:Ignorable="d">
 
     <Design.DataContext>
-        <!--
-            This only sets the DataContext for the previewer in an IDE,
-            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
-        -->
         <viewModes:MainWindowViewModel />
     </Design.DataContext>
     <Border Background="{DynamicResource SemiBlack}">
@@ -124,7 +120,8 @@
 
                     <!--  Main content  -->
                     <Border Grid.Row="1">
-                        <ContentControl Content="{Binding CurrentViewModel, Mode=TwoWay}">
+                        <ContentControl Content="{Binding Content, Mode=TwoWay}" />
+                        <!--<ContentControl Content="{Binding CurrentViewModel, Mode=TwoWay}">
                             <ContentControl.DataTemplates>
                                 <DataTemplate DataType="{x:Type viewModes:MainViewModel}">
                                     <views:MainView />
@@ -145,7 +142,7 @@
                                     <views:NotesView />
                                 </DataTemplate>
                             </ContentControl.DataTemplates>
-                        </ContentControl>
+                        </ContentControl>-->
                     </Border>
                 </Grid>
             </Border>

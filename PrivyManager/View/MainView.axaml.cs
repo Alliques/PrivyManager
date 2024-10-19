@@ -1,5 +1,5 @@
 using Avalonia.Controls;
-using PrivyManager.ViewModels;
+using PrivyManager.ViewModel;
 
 namespace PrivyManager.View;
 

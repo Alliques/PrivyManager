@@ -1,4 +1,4 @@
-﻿namespace PrivyManager.ViewModels
+﻿namespace PrivyManager.ViewModel
 {
     public partial class AccountsViewModel : ViewModelBase
     {

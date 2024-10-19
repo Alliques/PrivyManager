@@ -1,6 +1,6 @@
 using Avalonia;
 using Avalonia.Controls.Primitives;
-using PrivyManager.ViewModels;
+using PrivyManager.ViewModel;
 
 namespace PrivyManager.Controls;
 

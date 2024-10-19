@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Styling;
-using PrivyManager.ViewModels.Controls;
+using PrivyManager.ViewModel.Controls;
 using System;
 
 namespace PrivyManager.Controls;

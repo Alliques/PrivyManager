@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using PrivyManager.View;
 
-namespace PrivyManager.ViewModels.Base
+namespace PrivyManager.ViewModel.Base
 {
     public class ViewModelBase : ObservableObject
     {

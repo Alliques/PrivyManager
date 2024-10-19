@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using PrivyManager.ViewModels;
+using PrivyManager.ViewModel;
 
 namespace PrivyManager.View;
 

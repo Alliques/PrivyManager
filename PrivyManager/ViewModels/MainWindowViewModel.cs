@@ -1,31 +1,31 @@
 ﻿using Avalonia.Controls;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.DependencyInjection;
 using PrivyManager.Enums;
+using PrivyManager.Navigation;
 using System;
 
-namespace PrivyManager.ViewModels
+namespace PrivyManager.ViewModel
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
+        private readonly Router<ViewModelBase> _router;
         private readonly Window _mainWindow;
         private IServiceProvider _serviceProvider;
-        private ViewModelBase? _currentViewModel;
 
-        public ViewModelBase? CurrentViewModel
-        {
-            get => _currentViewModel;
-            set
-            {
-                _currentViewModel = value;
-                OnPropertyChanged(nameof(CurrentViewModel));
-            }
-        }
+        [ObservableProperty]
+        private ViewModelBase _content = default!;
 
-        public MainWindowViewModel(Window mainWindow, IServiceProvider serviceProvider)
+        public MainWindowViewModel(
+            Window mainWindow, 
+            Router<ViewModelBase> router, 
+            IServiceProvider serviceProvider)
         {
+            _router = router;
+            _router.CurrentViewModelChanged += viewModel => Content = viewModel;
+            _router.GoTo<MainViewModel>();
             _mainWindow = mainWindow;
-            CurrentViewModel = new MainViewModel();
             _serviceProvider = serviceProvider;
         }
 
@@ -37,22 +37,22 @@ namespace PrivyManager.ViewModels
                 switch (((PrivyManager.Controls.MenuItem)arg).Type as Pages?)
                 {
                     case Pages.Main:
-                        CurrentViewModel = _serviceProvider.GetService<MainViewModel>();
+                        _router.GoTo<MainViewModel>();
                         break;
                     case Pages.Accounts:
-                        CurrentViewModel = _serviceProvider.GetService<AccountsViewModel>();
+                        _router.GoTo<AccountsViewModel>();
                         break;
                     case Pages.Cards:
-                        CurrentViewModel = _serviceProvider.GetService<CardsViewModel>();
+                        _router.GoTo<CardsViewModel>();
                         break;
                     case Pages.Documents:
-                        CurrentViewModel = _serviceProvider.GetService<DocumentsViewModel>();
+                        _router.GoTo<DocumentsViewModel>();
                         break;
                     case Pages.Address:
-                        CurrentViewModel = _serviceProvider.GetService<AddressViewModel>();
+                        _router.GoTo<AddressViewModel>();
                         break;
                     case Pages.Notes:
-                        CurrentViewModel = _serviceProvider.GetService<NotesViewModel>();
+                        _router.GoTo<NotesViewModel>();
                         break;
                     default:
                         throw new Exception("Page not found");

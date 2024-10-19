@@ -1,4 +1,4 @@
-﻿namespace PrivyManager.ViewModels
+﻿namespace PrivyManager.ViewModel
 {
     public class AddressViewModel : ViewModelBase
     {

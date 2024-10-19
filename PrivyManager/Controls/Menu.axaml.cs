@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Metadata;
-using PrivyManager.ViewModels.Controls;
+using PrivyManager.ViewModel.Controls;
 
 namespace PrivyManager.Controls;
 

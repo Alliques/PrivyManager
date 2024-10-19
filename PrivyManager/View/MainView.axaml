@@ -20,7 +20,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 Orientation="Horizontal">
-                <TextBlock Text="{Binding Str}" />
+                <!--<TextBlock Text="{Binding Str}" />-->
 
                 <controls:AccountCard
                     Width="320"

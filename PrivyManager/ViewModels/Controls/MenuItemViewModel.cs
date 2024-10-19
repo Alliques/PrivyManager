@@ -2,7 +2,7 @@
 using PrivyManager.Enums;
 using System;
 
-namespace PrivyManager.ViewModels.Controls
+namespace PrivyManager.ViewModel.Controls
 {
     public class MenuItemViewModel : ViewModelBase
     {

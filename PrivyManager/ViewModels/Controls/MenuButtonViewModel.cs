@@ -1,4 +1,4 @@
-﻿namespace PrivyManager.ViewModels.Controls
+﻿namespace PrivyManager.ViewModel.Controls
 {
     public class MenuButtonViewModel : ViewModelBase
     {
